@@ -12,12 +12,12 @@ class Counter extends Component {
         <span className={this.getBadgeClasses()}>{this.state.count}</span>
         <button
           className="btn btn-secondary btn-sm"
-          onClick={this.IncrementCount}
+          onClick={this.handleIncrement}
         >
-          Increment
+          Increment 
         </button>
 
-        <span>{this.renderTags()}</span>
+        <div>{this.renderTags()}</div>
       </React.Fragment>
     );
   }
@@ -27,23 +27,23 @@ class Counter extends Component {
     if (this.state.tags.length === 0) return <h1>There are No Tags !</h1>;
     else
       return (
-        <div>
+        <span>
           <h1>{this.state.tags.length} Tags Found !</h1>
           <ul>
             {this.state.tags.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </div>
+        </span>
       );
   }
 
   //on click of button handled here
-  IncrementCount() {
-    let { count } = this.state;
+  handleIncrement() {
+   
 
-    console.log(this.count);
-    return count;
+    console.log("No of times Increased = ");
+    //return count;
     //return this.count;
   }
 
